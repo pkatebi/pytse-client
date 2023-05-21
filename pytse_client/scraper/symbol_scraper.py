@@ -84,14 +84,6 @@ def get_market_symbols_from_market_watch_page() -> List[MarketSymbol]:
 
     market_symbols = []
     for symbol_data in symbols_data:
-        data = symbol_data.split(",")
-        symbol_name_ends_with_number = re.search(r"\d+$", data[2])
-
-        # if symbol name ends with number it's some kind of symbol
-        # like 'حق تقدم' and we don't want it
-        if symbol_name_ends_with_number:
-            continue
-
         market_symbols.append(
             MarketSymbol(
                 code=replace_arabic(data[1]),
