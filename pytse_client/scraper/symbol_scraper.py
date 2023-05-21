@@ -88,6 +88,7 @@ def get_market_symbols_from_market_watch_page() -> List[MarketSymbol]:
             MarketSymbol(
                 code=replace_arabic(data[1]),
                 symbol=replace_arabic(data[2]),
+                print(symbol),
                 index=replace_arabic(data[0]),
                 name=replace_arabic(data[3]).replace("\u200c", ""),
                 old=[],
